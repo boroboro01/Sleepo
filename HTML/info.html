@@ -11,82 +11,14 @@
     <link rel="stylesheet" href="../CSS/navigation.css">
     <link rel="stylesheet" href="../CSS/main.css">
     <link rel="stylesheet" href="../CSS/popup.css">
-    <script defer src="../Javascript/main.js"></script>
-    <script defer src="../Javascript/alaram.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="../Javascript/info.js"></script>
     <style>
-        .mezamashi {
+        .info {
             width: 35vh;
             transition: all 0.5s ease;
         }
-
-        .mezamashi:hover {
+        .info:hover {
             cursor: pointer;
-        }
-        .properTime {
-            display: none;
-        }
-        .properTime.active {
-            position: relative;
-            border-radius: .4em;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-color: #3c3a3a;
-            border-radius: 10px;
-            width: 50vw;
-            margin-top: 10px;
-        }
-        .properTime.active:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border: 20px solid transparent;
-            border-bottom-color: #3c3a3a;
-            border-top: 0;
-            border-left: 0;
-            margin-left: -10px;
-            margin-top: -20px;
-        }
-
-        .properTime #times {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-        .properTime > h1 {
-            font-size: 2em;
-            color: #fff;
-            margin: 10px 15px;
-        }
-        .properTime > #times > div {
-            font-size: 2em;
-            color: #91e375;
-            margin: 10px 15px;
-        }
-        .properTime > #times >div:nth-child(n+4) {
-            font-size: 1.5em;
-            color: #161616;
-            margin: 10px 15px;
-        }
-        .properTime > #times.disable > div {
-            display: none;
-        }
-        .properTime > #countdownTimer {
-            font-size: 2em;
-            color: #fff;
-            margin: 10px 15px;
-        }
-        .moon {
-            width: 50px;
-            padding: 5px;
-            margin: 5px;
         }
     </style>
 </head>
@@ -147,42 +79,31 @@
     </nav>
     <section class="section">
         <div id="section">
-            <img src="../Assets/Images/character_mezamashidokei.png" class="mezamashi" id="open-popup-btn">
-            <div class="properTime">
-                <h1 id="bubbleTitle"> 잠들기에 적절한 시간은...</h1>
-                <div id="times" class="disable">
-                    <div id="time1">10:00AM</div>
-                    <div id="time2">10:00AM</div>
-                    <div id="time3">10:00AM</div>
-                    <div id="time4">10:00AM</div>
-                    <div id="time5">10:00AM</div>
-                    <div id="time6">10:00AM</div>
-                </div>
-                <div id="countdownTimer"></div>
-            </div>
+            <img src="../Assets/Images/job_hoken_teacher.png" class="info" id="open-popup-btn">        
         </div>
         <div class="popup center">
             <div class="icon">
                 <i class='bx bx-moon'></i>
             </div>
             <div class="title">
-                언제 일어나고 싶어요?
+                수면에 대한 정보
             </div>
-            <div class="description">
-                기분좋게 일어나고 싶은 시간을 적어주세요!
-                취침 시간을 계산 해 드릴게요!
-            </div>
-            <div class="timer">
-                <input type="time" min="00:00" max="24:00" id="wake-up">
+            <div class="description" id="description">
+                우리는 삶의 3분의 1이나 되는 많은 시간을 잠을 자면서 지내게 됩니다. <br>
+                대한수면학회에 따르면 일상 생활을 유지하기 위하여 하루 <span>6 ~ 8시간</span>의 수면을 취해야 한다고 합니다.<br>
+
+                이 처럼 중요한 수면을 잘 관리하고 계신가요?<br>
+                매일 아침 일어나기 힘들지는 않으신가요?<br>
+                그것을 도와드리기 위해 이러한 웹 사이트를 준비했습니다.
             </div>
             <div class="dismiss-btn">
                 <button id="dismiss-popup-btn">
-                    취소
+                    닫기
                 </button>
             </div>
             <div class="confirm-btn">
                 <button id="confirm-popup-btn">
-                    계산
+                    다음
                 </button>
             </div>
         </div>
