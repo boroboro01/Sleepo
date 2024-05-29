@@ -1,81 +1,188 @@
-<header class="header">
-    <img src="../Assets/Images/moon_usagi_kage.png" class="moon">
-</header>
-<nav class="nav">
-    nav
-    <!-- <div class="sidebar">
-        <div class="top">
-            <div class="logo">
-                <i class="bx bx-bed"></i>
-                <span>Sleepo</span>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS/navigation.css">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/popup.css">
+    <link rel="stylesheet" href="../CSS/chart.css">
+    <script defer src="../Javascript/tracker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .report {
+            width: 35vh;
+            transition: all 0.5s ease;
+        }
+
+        .report:hover {
+            cursor: pointer;
+        }
+        .description {
+            margin-bottom: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="header">header</header>
+    <nav class="nav">
+        <div class="sidebar">
+            <div class="top">
+                <div class="logo">
+                    <i class="bx bx-bed"></i>
+                    <span>Sleepo</span>
+                </div>
+                <i class="bx bx-menu" id="btn"></i>
             </div>
-            <i class="bx bx-menu" id="btn"></i>
+            <div class="user">
+                <img src="../Assets/Images/mouth_boy6_n.png" alt="profile_image" class="user-img">
+                <div>
+                    <p class="bold">User 1</p>
+                    <p>Admin</p>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <a href="main.html">
+                        <i class="bx bx-home"></i>
+                        <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;Sleepo Timer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="music.html">
+                        <i class="bx bx-music"></i>
+                        <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;Relaxing Music</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tracker.html">
+                        <i class="bx bx-stats"></i>
+                        <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sleep Tracker</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="info.html">
+                        <i class="bx bx-info-circle"></i>
+                        <span class="nav-item">Sleep Information</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-log-out"></i>
+                        <span
+                            class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log
+                            Out</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div class="user">
-            <img src="../Assets/Images/mouth_boy6_n.png" alt="profile_image" class="user-img">
-            <div>
-                <p class="bold">User 1</p>
-                <p>Admin</p>
+    </nav>
+    <section class="section">
+        <div id="section">
+            <img src="../Assets/Images/document_data_bunseki.png" class="report" id="open-popup-btn">
+        </div>
+        <div class="popup center">
+            <div class="icon">
+                <i class='bx bx-moon'></i>
+            </div>
+            <div class="title">
+                일주일 수면 결과 보고서
+            </div>
+            <div class="description">
+                일주일간 얼마나 좋은 수면을 취하셨나요?
+            </div>
+
+            <div class="chart-wrap">
+                <div class="chart">
+                    <ul class="numbers">
+                        <li><span>8 시간</span></li>
+                        <li><span>4 시간</span></li>
+                        <li><span>0 시간</span></li>
+                    </ul>
+                    <ul class="bars">
+                        <li>
+                            <div class="bar" data-hours="6"></div>
+                            <span id="day1">Option 01</span>
+                        </li>
+                        <li>
+                            <div class="bar" data-hours="2"></div>
+                            <span id="day2">Option 02</span>
+                        </li>
+                        <li>
+                            <div class="bar" data-hours="4"></div>
+                            <span id="day3">Option 03</span>
+                        </li>
+                        <li>
+                            <div class="bar" data-hours="6"></div>
+                            <span id="day4">Option 04</span>
+                        </li>
+                        <li>
+                            <div class="bar" data-hours="8"></div>
+                            <span id="day5">Option 05</span>
+                        </li>
+                        <li>
+                            <div class="bar" data-hours="3"></div>
+                            <span id="day6">Option 06</span>
+                        </li>
+                        <li>
+                            <div class="bar" data-hours="5"></div>
+                            <span id="day7">Option 07</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dismiss-btn">
+                <button id="dismiss-popup-btn">
+                    닫기
+                </button>
             </div>
         </div>
-        <ul>
-            <li>
-                <a href="main.html">
-                    <i class="bx bx-home"></i>
-                    <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;Relaxing Music</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bx bx-music"></i>
-                    <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;Relaxing Music</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bx bx-stats"></i>
-                    <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sleep Tracker</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bx bx-info-circle"></i>
-                    <span class="nav-item">Sleep Information</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bx bx-log-out"></i>
-                    <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log Out</span>
-                </a>
-            </li>
-        </ul>
-    </div>  -->
-    <!-- sidebar -->
-</nav>
-<section class="section">
-    section
-        <!-- <div id="menu_icon">
         </div>
-                <img src="../Assets/Images/character_mezamashidokei.png" class="mezamashi" id="open-popup-btn">
-            <div class="popup center">
-                    <div class="icon">
-                        <i class="bx bxs-check-circle"></i>
-                    </div>
-                    <div class="title">
-                        Success!!
-                    </div>
-                    <div class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nulla leo, mattis sed pretium id, aliquet vel purus.
-                    </div>
-                    <div class="dismiss-btn">
-                        <button id="dismiss-popup-btn">
-                            Dismiss
-                        </button>
-                    </div>
-            </div> -->
-             <!-- popup-center -->
-<section>
-<footer class="footer">
-    footer
-</footer>
+    </section>
+    <footer class="footer">footer</footer>
+    <script type="text/Javascript">
+        // $(function(){
+        //     $('.bars li .bar').each(function(key, bar){
+        //         var hours = $(this).data('hours');
+        //         var percentage = Math.min(hours / 8 * 100, 100);
+
+        //         $(this).animate({
+        //             'height' : percentage + '%'
+        //         }, 1000);
+
+        //         if(2 < hours && hours <= 4) {
+        //             $(this).addClass('less');
+        //             $(this).removeClass('very-less');
+        //         } else if(hours <= 2) {
+        //             $(this).addClass('very-less');
+        //             $(this).removeClass('less');
+        //         }
+
+        //     });
+        // });
+        // $(function() {
+        //     for(let i=0;i<7;i++) {
+        //         const date = new Date();
+        //         date.setDate(date.getDate() - i);
+
+        //         const formattedDate = date.toLocaleDateString('en-US', {
+        //             weekday: 'short',
+        //             day: 'numeric'
+        //         });
+
+        //         $(`#day${8 - 1 - i}`).text(formattedDate);
+        //     }
+        // });
+    </script>
+</body>
+
+</html>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../CSS/navigation.css">
     <link rel="stylesheet" href="../CSS/main.css">
     <link rel="stylesheet" href="../CSS/popup.css">
+    <script defer src="../Javascript/tracker.js"></script>
     <script defer src="../Javascript/main.js"></script>
     <script defer src="../Javascript/alaram.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -70,7 +71,7 @@
             color: #91e375;
             margin: 10px 15px;
         }
-        .properTime > #times >div:nth-child(n+4) {
+        .properTime > #times >div:nth-child(-n+3) {
             font-size: 1.5em;
             color: #161616;
             margin: 10px 15px;
@@ -83,11 +84,83 @@
             color: #fff;
             margin: 10px 15px;
         }
-        .moon {
-            width: 50px;
-            padding: 5px;
-            margin: 5px;
+        .properTime #reset {
+            color: #91e375;
+            font-size: 1em;
+            cursor: pointer;
+            margin-bottom: 5px;
         }
+        /* Smart Phone */
+@media screen and (max-width: 767px) {
+    .properTime {
+            display: none;
+        }
+        .properTime.active {
+            position: relative;
+            border-radius: .4em;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #3c3a3a;
+            border-radius: 10px;
+            width: 50vw;
+            margin-top: 10px;
+        }
+        .properTime.active:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-bottom-color: #3c3a3a;
+            border-top: 0;
+            border-left: 0;
+            margin-left: -10px;
+            margin-top: -20px;
+        }
+
+        .properTime #times {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .properTime > h1 {
+            font-size: 2em;
+            color: #fff;
+            margin: 10px 15px;
+        }
+        .properTime > #times > div {
+            font-size: 2em;
+            color: #91e375;
+            margin: 10px 15px;
+        }
+        .properTime > #times >div:nth-child(-n+3) {
+            font-size: 1.5em;
+            color: #161616;
+            margin: 10px 15px;
+        }
+        .properTime > #times.disable > div {
+            display: none;
+        }
+        .properTime > #countdownTimer {
+            font-size: 2em;
+            color: #fff;
+            margin: 10px 15px;
+        }
+        .properTime #reset {
+            color: #91e375;
+            font-size: 1em;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+}
+        
+        
     </style>
 </head>
 
@@ -159,6 +232,9 @@
                     <div id="time6">10:00AM</div>
                 </div>
                 <div id="countdownTimer"></div>
+                <div id="reset">
+                    알람 시계 멈추기
+                </div>
             </div>
         </div>
         <div class="popup center">
@@ -177,7 +253,7 @@
             </div>
             <div class="dismiss-btn">
                 <button id="dismiss-popup-btn">
-                    취소
+                    닫기
                 </button>
             </div>
             <div class="confirm-btn">

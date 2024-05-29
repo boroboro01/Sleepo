@@ -1,31 +1,5 @@
-/* Smart Phone */
-/* @media screen and (max-height: 767px) {
-    7*{ margin: 0;
-        padding: 0;
-        box-sizing:border-box;
-        font-family: 'Segoe UI', Tahoma, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        #Scaffold {
-            width: 100vh;
-            height: 100vh;
-            background-image: url("../Assets/Images/moon_usagi_kage.png");
-            background-repeat: no-repeat;
-            background-size: 5%;
-            background-position: 98% 4%;
-            background-color: #0D2F4B;
-        }
-        #Column {
-            height: 100vh;
-        }
-        #Row {
-            width: 767px;
-        }
-        #SizedBox {
-            height: 5px;
-        }
-} */
 @import url('https://fonts.googleapis.com/css2?family=Dongle&family=IBM+Plex+Sans+KR&family=M+PLUS+Rounded+1c&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+
 
 /* PC */
     * { 
@@ -67,7 +41,4 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
-    span {
-        color: #f9aa6d
     }

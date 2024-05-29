@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=IBM+Plex+Sans+KR&family=M+PLUS+Rounded+1c&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+.char-wrap {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'IBM Plex Sans KR', Tahoma, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+}
+.chart {
+    width: 600px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.numbers{
+    color: #010101;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+.numbers li {
+    list-style: none;
+    height: 150px;
+    position: relative;
+    bottom: 40px;
+}
+.numbers span {
+    font-size: 12px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+.bars {
+    color: #010101;
+    font-size: 12px;
+    font-weight: 600;
+    background: #555;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 500px;
+    height: 350px;
+    box-shadow: 0 0 10px 0 #555;
+    border-radius: 5px;
+}
+.bars li {
+    display: table-cell;
+    width: 100px;
+    height: 330px;
+    position: relative;
+}
+.bars span {
+    width: 100%;
+    position: absolute;
+    bottom: -45px;
+    right: 0;
+    text-align: center;
+}
+.bars li .bar.less {
+    background: #f2e827;
+}
+.bars li .bar.very-less {
+    background: #a61e1e;
+}
+.bars .bar {
+    display: block;
+    background: #28b319;
+    width: 30px;
+    position: absolute;
+    bottom: 0;
+    margin-left: 20px;
+    margin-bottom: -20px;
+    text-align: center;
+    transition: 800ms ease-out;
+}
+.bars .bar:hover {
+    background: #3ecf64;
+    cursor: pointer;
+}
+.bars .bar:before {
+    font-size: 10px;
+    color: #fff;
+    content: attr(data-hours) ' 시간';
+    position: relative;
+    bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+    .char-wrap {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'IBM Plex Sans KR', Tahoma, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+    }
+    .chart {
+        width: 600px;
+        height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .numbers{
+        color: #010101;
+        margin: 0;
+        padding: 0;
+        width: 50px;
+        height: 100%;
+        display: inline-block;
+        float: left;
+    }
+    .numbers li {
+        list-style: none;
+        height: 150px;
+        position: relative;
+        bottom: 40px;
+    }
+    .numbers span {
+        font-size: 12px;
+        font-weight: 600;
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+    }
+    .bars {
+        color: #010101;
+        font-size: 12px;
+        font-weight: 600;
+        background: #555;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        width: 500px;
+        height: 350px;
+        box-shadow: 0 0 10px 0 #555;
+        border-radius: 5px;
+    }
+    .bars li {
+        display: table-cell;
+        width: 100px;
+        height: 330px;
+        position: relative;
+    }
+    .bars span {
+        width: 100%;
+        position: absolute;
+        bottom: -45px;
+        right: 0;
+        text-align: center;
+    }
+    .bars li .bar.less {
+        background: #f2e827;
+    }
+    .bars li .bar.very-less {
+        background: #a61e1e;
+    }
+    .bars .bar {
+        display: block;
+        background: #28b319;
+        width: 30px;
+        position: absolute;
+        bottom: 0;
+        margin-left: 20px;
+        margin-bottom: -20px;
+        text-align: center;
+        transition: 800ms ease-out;
+    }
+    .bars .bar:hover {
+        background: #3ecf64;
+        cursor: pointer;
+    }
+    .bars .bar:before {
+        font-size: 10px;
+        color: #fff;
+        content: attr(data-hours) ' 시간';
+        position: relative;
+        bottom: 20px;
+    }
+}
