@@ -1,34 +1,173 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="../CSS/navigation.css">
-        <link rel="stylesheet" href="../CSS/main.css">
-        <link rel="stylesheet" href="../CSS/popup.css">
-        <style>
-            .mezamashi {
-                width: 35vh;
-                transition: all 0.5s ease;
-            }
-            .mezamashi:hover {
-                cursor: pointer;
-            }
-            .moon {
-                width: 50px;
-                padding: 5px;
-                margin: 5px;
-            }
-        </style>
-    </head>
-    <body>
-        <header class="header">header</header>
-        <nav class="nav">
-            <div class="sidebar">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS/navigation.css">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/popup.css">
+    <script defer src="../Javascript/tracker.js"></script>
+    <script defer src="../Javascript/main.js"></script>
+    <script defer src="../Javascript/alaram.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .mezamashi {
+            width: 35vh;
+            transition: all 0.5s ease;
+        }
+
+        .mezamashi:hover {
+            cursor: pointer;
+        }
+        .properTime {
+            display: none;
+        }
+        .properTime.active {
+            position: relative;
+            border-radius: .4em;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #3c3a3a;
+            border-radius: 10px;
+            width: 50vw;
+            margin-top: 10px;
+        }
+        .properTime.active:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-bottom-color: #3c3a3a;
+            border-top: 0;
+            border-left: 0;
+            margin-left: -10px;
+            margin-top: -20px;
+        }
+
+        .properTime #times {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .properTime > h1 {
+            font-size: 2em;
+            color: #fff;
+            margin: 10px 15px;
+        }
+        .properTime > #times > div {
+            font-size: 2em;
+            color: #91e375;
+            margin: 10px 15px;
+        }
+        .properTime > #times >div:nth-child(-n+3) {
+            font-size: 1.5em;
+            color: #161616;
+            margin: 10px 15px;
+        }
+        .properTime > #times.disable > div {
+            display: none;
+        }
+        .properTime > #countdownTimer {
+            font-size: 2em;
+            color: #fff;
+            margin: 10px 15px;
+        }
+        .properTime #reset {
+            color: #91e375;
+            font-size: 1em;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+        /* Smart Phone */
+@media screen and (max-width: 767px) {
+    .properTime {
+            display: none;
+        }
+        .properTime.active {
+            position: relative;
+            border-radius: .4em;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #3c3a3a;
+            border-radius: 10px;
+            width: 50vw;
+            margin-top: 10px;
+        }
+        .properTime.active:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-bottom-color: #3c3a3a;
+            border-top: 0;
+            border-left: 0;
+            margin-left: -10px;
+            margin-top: -20px;
+        }
+
+        .properTime #times {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .properTime > h1 {
+            font-size: 2em;
+            color: #fff;
+            margin: 10px 15px;
+        }
+        .properTime > #times > div {
+            font-size: 2em;
+            color: #91e375;
+            margin: 10px 15px;
+        }
+        .properTime > #times >div:nth-child(-n+3) {
+            font-size: 1.5em;
+            color: #161616;
+            margin: 10px 15px;
+        }
+        .properTime > #times.disable > div {
+            display: none;
+        }
+        .properTime > #countdownTimer {
+            font-size: 2em;
+            color: #fff;
+            margin: 10px 15px;
+        }
+        .properTime #reset {
+            color: #91e375;
+            font-size: 1em;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+}
+        
+        
+    </style>
+</head>
+
+<body>
+    <header class="header">header</header>
+    <nav class="nav">
+        <div class="sidebar">
             <div class="top">
                 <div class="logo">
                     <i class="bx bx-bed"></i>
@@ -47,23 +186,23 @@
                 <li>
                     <a href="main.html">
                         <i class="bx bx-home"></i>
-                        <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;Relaxing Music</span>
+                        <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;Sleepo Timer</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="music.html">
                         <i class="bx bx-music"></i>
                         <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;Relaxing Music</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="tracker.html">
                         <i class="bx bx-stats"></i>
                         <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sleep Tracker</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="info.html">
                         <i class="bx bx-info-circle"></i>
                         <span class="nav-item">Sleep Information</span>
                     </a>
@@ -71,58 +210,64 @@
                 <li>
                     <a href="#">
                         <i class="bx bx-log-out"></i>
-                        <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log Out</span>
+                        <span
+                            class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log
+                            Out</span>
                     </a>
                 </li>
             </ul>
-        </div> 
+        </div>
     </nav>
-        <section class="section">
-            <div id="section">
-                <img src="../Assets/Images/character_mezamashidokei.png" class="mezamashi" id="open-popup-btn">
+    <section class="section">
+        <div id="section">
+            <img src="../Assets/Images/character_mezamashidokei.png" class="mezamashi" id="open-popup-btn">
+            <div class="properTime">
+                <h1 id="bubbleTitle"> 잠들기에 적절한 시간은...</h1>
+                <div id="times" class="disable">
+                    <div id="time1">10:00AM</div>
+                    <div id="time2">10:00AM</div>
+                    <div id="time3">10:00AM</div>
+                    <div id="time4">10:00AM</div>
+                    <div id="time5">10:00AM</div>
+                    <div id="time6">10:00AM</div>
+                </div>
+                <div id="countdownTimer"></div>
+                <div id="reset">
+                    알람 시계 멈추기
+                </div>
             </div>
-            <div class="popup center">
-                        <div class="icon">
-                            <i class="bx bxs-check-circle"></i>
-                        </div>
-                        <div class="title">
-                            Success!!
-                        </div>
-                        <div class="description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nulla leo, mattis sed pretium id, aliquet vel purus.
-                        </div>
-                        <div class="dismiss-btn">
-                            <button id="dismiss-popup-btn">
-                                Dismiss
-                            </button>
-                        </div>
+        </div>
+        <div class="popup center">
+            <div class="icon">
+                <i class='bx bx-moon'></i>
             </div>
-        </section>
-        <footer class="footer">footer</footer>
-    </body>
+            <div class="title">
+                언제 일어나고 싶어요?
+            </div>
+            <div class="description">
+                기분좋게 일어나고 싶은 시간을 적어주세요!
+                취침 시간을 계산 해 드릴게요!
+            </div>
+            <div class="timer">
+                <input type="time" min="00:00" max="24:00" id="wake-up">
+            </div>
+            <div class="dismiss-btn">
+                <button id="dismiss-popup-btn">
+                    닫기
+                </button>
+            </div>
+            <div class="confirm-btn">
+                <button id="confirm-popup-btn">
+                    계산
+                </button>
+            </div>
+        </div>
+        </div>
+    </section>
+    <footer class="footer">footer</footer>
     <script>
-        window.onload = function() {
-            let btn = document.querySelector('#btn')
-            let sidebar = document.querySelector('.sidebar')
-
-            btn.onclick = function() {
-                sidebar.classList.toggle('active');
-            };
-            // home.onclick = function() {
-            //     location.replace('http://127.0.0.1:5501/HTML/main.html#');
-            // }
-
-
-        document.getElementById("open-popup-btn").addEventListener("click", function() {
-            document.getElementsByClassName("popup")[0].classList.add("active");
-        })
-        document.getElementById("dismiss-popup-btn").addEventListener("click", function() {
-            document.getElementsByClassName("popup")[0].classList.remove("active");
-        })
-
-        
-        
-        }
         
     </script>
+</body>
+
 </html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS/navigation.css">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/popup.css">
+    <script defer src="../Javascript/info.js"></script>
+    <style>
+        .info {
+            width: 35vh;
+            transition: all 0.5s ease;
+        }
+        .info:hover {
+            cursor: pointer;
+        }
+        .description {
+            margin-top: 50px;
+        }
+        span {
+            color: #ed6d6d;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">header</header>
+    <nav class="nav">
+        <div class="sidebar">
+            <div class="top">
+                <div class="logo">
+                    <i class="bx bx-bed"></i>
+                    <span>Sleepo</span>
+                </div>
+                <i class="bx bx-menu" id="btn"></i>
+            </div>
+            <div class="user">
+                <img src="../Assets/Images/mouth_boy6_n.png" alt="profile_image" class="user-img">
+                <div>
+                    <p class="bold">User 1</p>
+                    <p>Admin</p>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <a href="main.html">
+                        <i class="bx bx-home"></i>
+                        <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;Sleepo Timer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="music.html">
+                        <i class="bx bx-music"></i>
+                        <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;Relaxing Music</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tracker.html">
+                        <i class="bx bx-stats"></i>
+                        <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sleep Tracker</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="info.html">
+                        <i class="bx bx-info-circle"></i>
+                        <span class="nav-item">Sleep Information</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-log-out"></i>
+                        <span
+                            class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log
+                            Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="section">
+        <div id="section">
+            <img src="../Assets/Images/job_hoken_teacher.png" class="info" id="open-popup-btn">        
+        </div>
+        <div class="popup center">
+            <div class="icon">
+                <i class='bx bx-moon'></i>
+            </div>
+            <div class="title">
+                수면에 대한 정보
+            </div>
+            <div class="description" id="description">
+                우리는 삶의 3분의 1이나 되는 많은 시간을 잠을 자면서 지내게 됩니다. <br>
+                대한수면학회에 따르면 일상 생활을 유지하기 위하여 하루 <span>6 ~ 8시간</span>의 수면을 취해야 한다고 합니다.<br>
+
+                이 처럼 중요한 수면을 잘 관리하고 계신가요?<br>
+                매일 아침 일어나기 힘들지는 않으신가요?<br>
+                그것을 도와드리기 위해 이러한 웹 사이트를 준비했습니다.
+            </div>
+            <div class="dismiss-btn">
+                <button id="dismiss-popup-btn">
+                    닫기
+                </button>
+            </div>
+            <div class="confirm-btn">
+                <button id="confirm-popup-btn">
+                    다음
+                </button>
+            </div>
+        </div>
+        </div>
+    </section>
+    <footer class="footer">footer</footer>
+    <script>
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS/navigation.css">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/popup.css">
+    <script defer src="../Javascript/musicPlayer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .sleepGirl {
+            width: 35vh;
+            transition: all 0.5s ease;
+        }
+        .sleepGirl:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">header</header>
+    <nav class="nav">
+        <div class="sidebar">
+            <div class="top">
+                <div class="logo">
+                    <i class="bx bx-bed"></i>
+                    <span>Sleepo</span>
+                </div>
+                <i class="bx bx-menu" id="btn"></i>
+            </div>
+            <div class="user">
+                <img src="../Assets/Images/mouth_boy6_n.png" alt="profile_image" class="user-img">
+                <div>
+                    <p class="bold">User 1</p>
+                    <p>Admin</p>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <a href="main.html">
+                        <i class="bx bx-home"></i>
+                        <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;Sleepo Timer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="music.html">
+                        <i class="bx bx-music"></i>
+                        <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;Relaxing Music</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tracker.html">
+                        <i class="bx bx-stats"></i>
+                        <span class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sleep Tracker</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="info.html">
+                        <i class="bx bx-info-circle"></i>
+                        <span class="nav-item">Sleep Information</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-log-out"></i>
+                        <span
+                            class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log
+                            Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="section">
+        <div id="section">
+            <img src="../Assets/Images/sleep_music_woman.png" class="sleepGirl" id="open-popup-btn">
+            <div class="player">
+                <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/l_6S4xwX9ng?si=bbxG930nm4qR6EkY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>            
+        </div>
+        <div class="popup center">
+            <div class="icon">
+                <i class='bx bx-moon'></i>
+            </div>
+            <div class="title">
+                언제 일어나고 싶어요?
+            </div>
+            <div class="description">
+                기분좋게 일어나고 싶은 시간을 적어주세요!
+                취침 시간을 계산 해 드릴게요!
+            </div>
+            <div class="timer">
+                <input type="time" min="00:00" max="24:00" id="wake-up">
+            </div>
+            <div class="dismiss-btn">
+                <button id="dismiss-popup-btn">
+                    취소
+                </button>
+            </div>
+            <div class="confirm-btn">
+                <button id="confirm-popup-btn">
+                    계산
+                </button>
+            </div>
+        </div>
+        </div>
+    </section>
+    <footer class="footer">footer</footer>
+    <script>
+        
+    </script>
+</body>
+
+</html>
